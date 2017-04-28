@@ -7,6 +7,10 @@ To run the secure Vault local setup (SSL certs stored in Certs directory):
 ### export VAULT_ADDR='http://example.net:8200'
 
 2. Add example.net as a localhost entry in /etc/hosts
+
+3. docker-compose up (or docker-compose up -d for detached mode)
+
+4. To terminate CTRL + C or (docker-compose kill for detached mode)
 ```
 Commands to run to test the setup:
 
