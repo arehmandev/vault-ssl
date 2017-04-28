@@ -1,7 +1,9 @@
+### Use docker-compose instead (recommended), if you don't have docker-compose feel free to try this script
+
 #!/bin/bash
 
 export VAULT_ADDR="https://example.net:8200"
-vault -v 
+vault -v
 docker rm -f consul
 docker rm -f vault
 sleep 3

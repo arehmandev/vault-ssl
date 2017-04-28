@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  vault:
+    image: sjourdan/vault
+    ports:
+      - 8200:8200
+    volumes:
+      - $PWD/config:/config
+      - $PWD/Certs:/Certs
+    command: server -config=/config/consul.hcl
+
+  consul:
+    image: progrium/consul
+    ports:
+      - 8400:8400
+      - 8500:8500
+      - 8600:53/udp
+    volumes:
+      - $PWD/Certs:/Certs
+    command: -server -bootstrap -ui-dir /ui
