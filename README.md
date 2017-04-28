@@ -24,7 +24,7 @@ vault write -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Ce
 vault read -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem secret/foo
 ```
 
-## Notes:
+## Notes
 
 SSL certs were generated via cfssl (instructions in generate-certs.sh in Certs/cfssl folder)
 For more info: https://coreos.com/os/docs/latest/generate-self-signed-certificates.html
