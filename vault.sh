@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export VAULT_ADDR="https://example.net:8200"
+vault -v 
 docker rm -f consul
 docker rm -f vault
 sleep 3
@@ -20,7 +21,8 @@ docker run -d \
      --volume $PWD/config:/config \
      --volume $PWD/Certs:/Certs \
      sjourdan/vault server -config=/config/consul.hcl
-echo "Now download Vault and run './vault init'"
+
+echo "Now download Vault and run 'vault init -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem'"
 
 # Commands to run to init and unseal
 # vault init -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem
