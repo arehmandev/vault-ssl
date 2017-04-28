@@ -23,9 +23,9 @@ docker run -d \
 echo "Now download Vault and run './vault init'"
 
 # Commands to run to init and unseal
-# vault init -ca-cert=ca.pem -client-cert=web-cert.pem -client-key=web-key.pem
-# vault unseal -ca-cert=ca.pem -client-cert=web-cert.pem -client-key=web-key.pem
+# vault init -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem
+# vault unseal -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem
 
-# vault write -ca-cert=ca.pem -client-cert=web-cert.pem -client-key=web-key.pem secret/foo user=abdul master=me
+# vault write -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem secret/foo user=abdul master=me
 
-# vault read -ca-cert=ca.pem -client-cert=web-cert.pem -client-key=web-key.pem secret/foo
+# vault read -ca-cert=Certs/ca.pem -client-cert=Certs/web-cert.pem -client-key=Certs/web-key.pem secret/foo
